@@ -154,7 +154,7 @@ def cpu_status(hardware, name, cpu):
     ========== ================= =======================================
     online     Bool              Status core
     governor   str               Type of governor running on the core
-    freq       dict              Frequency of the core 
+    freq       dict              Frequency of the core
     info_freq  dict              Frequency of the core
     idle_state dict              All Idle state running
     user       float             User percentage utilization
@@ -364,8 +364,8 @@ def power_status(hardware, power):
     # Make voltage diagnostic status
     d_volt = DiagnosticStatus(
         name='jetson_stats power',
-        message='curr={curr}mW avg={avg}mW'.format(
-            curr=int(power['tot']['curr']), avg=int(power['tot']['avg'])),
+        message='power={power}mW avg={avg}mW'.format(
+            power=int(power['tot']['power']), avg=int(power['tot']['avg'])),
         hardware_id=hardware,
         values=values)
     return d_volt
